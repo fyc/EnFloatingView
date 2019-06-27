@@ -96,6 +96,7 @@ public class FloatingView implements IFloatingView {
         }
         mContainer = container;
         container.addView(mEnFloatingView);
+        mEnFloatingView.onAttach();
         return this;
     }
 
@@ -113,6 +114,7 @@ public class FloatingView implements IFloatingView {
         if (mContainer == container) {
             mContainer = null;
         }
+        mEnFloatingView.onDetach();
         return this;
     }
 
