@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jiyou.floatingwin">
+    <!--小浮窗所需权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <service android:name="com.jiyou.floatingwin.FloatViewService" />
+    </application>
+</manifest>

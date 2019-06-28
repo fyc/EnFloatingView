@@ -3,6 +3,7 @@ package com.imuxuan.en.floatingview;
 import android.support.v7.app.AppCompatActivity;
 
 import com.imuxuan.floatingview.FloatingView;
+import com.jiyou.floatingwin.FloatViewManager;
 
 /**
  * @ClassName BaseActivity
@@ -18,11 +19,13 @@ public class BaseActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FloatingView.get().attach(this);
+        FloatViewManager.getInstance(this).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         FloatingView.get().detach(this);
+        FloatViewManager.getInstance(this).hide();
     }
 }

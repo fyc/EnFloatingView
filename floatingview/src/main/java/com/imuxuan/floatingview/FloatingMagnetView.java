@@ -99,11 +99,11 @@ public class FloatingMagnetView extends FrameLayout {
         setX(mOriginalX + event.getRawX() - mOriginalRawX);
         // 限制不可超出屏幕高度
         float desY = mOriginalY + event.getRawY() - mOriginalRawY;
-        if (desY < mStatusBarHeight) {
-            desY = mStatusBarHeight;
+        if (desY < 0) {
+            desY = 0;
         }
-        if (desY > mScreenHeight - getHeight()) {
-            desY = mScreenHeight - getHeight();
+        if (desY > mScreenHeight - getHeight()*2) {
+            desY = mScreenHeight - getHeight()*2;
         }
         setY(desY);
     }
