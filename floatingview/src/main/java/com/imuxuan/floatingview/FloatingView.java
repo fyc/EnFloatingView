@@ -72,7 +72,12 @@ public class FloatingView implements IFloatingView {
 
     @Override
     public FloatingView add() {
-        ensureMiniPlayer(EnContext.get());
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                ensureMiniPlayer(EnContext.get());
+            }
+        });
         return this;
     }
 
